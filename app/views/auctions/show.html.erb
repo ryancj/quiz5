@@ -23,8 +23,8 @@
 
   <h4>Previous Bids</h4>
   <% @auction.bids.order('created_at DESC').each do |bid| %>
-    $<%= bid.price %> on
-    <%= bid.created_at.strftime("%Y-%m-%d") %>
+    <strong>$<%= bid.price %></strong> on
+    <u><%= bid.created_at.strftime("%Y-%m-%d") %></u>
     <%= link_to 'Delete Bid', [@auction, bid], method: :delete, data: { confirm: 'Are you sure?'}, class: 'pull-right' %>
     <hr>
   <% end %>

@@ -4,6 +4,7 @@ gem 'interactive_editor'
 gem 'hirb'
 gem 'awesome_print'
 gem 'bootstrap-sass'
+gem 'faker'
 
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
@@ -43,6 +44,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
