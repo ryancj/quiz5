@@ -1,6 +1,6 @@
 <div class='container'>
-  <h2>Open Auctions</h2>
-  <% @auctions.each do |auction| %>
+  <h2>Auctions</h2>
+  <% @auctions.order('created_at DESC').each do |auction| %>
     <%= link_to auction.title, auction %>
     <p><%= auction.details %></p>
     <p><%= link_to 'Delete Auction',

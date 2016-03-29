@@ -5,7 +5,9 @@
   <p id='showheadings' class='pull-right'>
     <% if @auction.bids.empty? %>
       Place a bid.
-    <% elsif @current_price > @auction.reserve_price%>
+    <% elsif @current_price == nil %>
+      Bid not valid.
+    <% elsif @current_price > @auction.reserve_price %>
       *Reserve price met.
     <% else %>
       *Reserve price not met.
@@ -23,7 +25,7 @@
   <% @auction.bids.order('created_at DESC').each do |bid| %>
     $<%= bid.price %> on
     <%= bid.created_at.strftime("%Y-%m-%d") %>
-    <%= link_to 'Delete Bid', [@auction, bid], method: :delete, data: { confirm: 'Are you sure?'} %>
+    <%= link_to 'Delete Bid', [@auction, bid], method: :delete, data: { confirm: 'Are you sure?'}, class: 'pull-right' %>
     <hr>
   <% end %>
 </div>
