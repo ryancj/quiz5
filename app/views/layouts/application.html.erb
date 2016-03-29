@@ -16,6 +16,10 @@
         <h1 class='navbar-text'>Biddr</h1>
       </div>
     </div>
+    <ul class='nav navbar-nav navbar-right'>
+      <li><%= link_to 'New Auction', new_auction_path %></li>
+      <li><%= link_to 'Home', root_path %></li>
+    </ul>
   </nav>
 
 <%= yield %>

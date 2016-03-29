@@ -1,0 +1,12 @@
+<div class='container'>
+  <h2>Open Auctions</h2>
+  <% @auctions.each do |auction| %>
+    <%= link_to auction.title, auction %>
+    <p><%= auction.details %></p>
+    <p><%= link_to 'Delete Auction',
+             auction_path(auction),
+                    method: :delete,
+     data: {confirm: 'Are you sure?'} %></p>
+    <hr>
+  <% end %>
+</div>

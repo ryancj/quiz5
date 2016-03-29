@@ -10,7 +10,15 @@
       <%= f.text_area :details  %>
     </div>
     <div>
-      <%= f.label :ends_on, 'Ends On'%>
+      <%= f.label :ends_on, 'Ends On' %>
+      <%= f.datetime_select :ends_on %>
+    </div>
+    <div>
+      <%= f.label 'Reserve Price' %>
+      <%= f.text_field :reserve_price %>
+    </div>
+    <div>
+      <%= f.submit 'Save'%>
     </div>
   <% end %>
 </div>

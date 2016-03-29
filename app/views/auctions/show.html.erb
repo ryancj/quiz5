@@ -1,0 +1,27 @@
+<div class='container'>
+  <h3 id='showheadings'><%= @auction.title %></h3>
+  <h4 id='showheadings' class='pull-right'>Current Price: $<%= @current_price %></h4>
+  <p><%= @auction.details %></p>
+  <p id='showheadings' class='pull-right'>
+    <% if @current_price > @auction.reserve_price %>
+      *Reserve price met.
+    <% else %>
+      *Reserve price not met.
+    <% end %>
+  </p>
+
+  <%= form_for [@auction, @bid] do |f| %>
+    <div>
+      <%= f.text_field :price %>
+      <%= f.submit 'Bid' %>
+    </div>
+  <% end %>
+
+  <h4>Previous Bids</h4>
+  <% @auction.bids.order('created_at DESC').each do |bid| %>
+    $<%= bid.price %> on
+    <%= bid.created_at.strftime("%Y-%m-%d") %>
+    <%= link_to 'Delete Bid', [@auction, bid], method: :delete, data: { confirm: 'Are you sure?'} %>
+    <hr>
+  <% end %>
+</div>
