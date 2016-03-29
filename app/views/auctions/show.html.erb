@@ -1,6 +1,6 @@
 <div class='container'>
   <h3 id='showheadings'><%= @auction.title %></h3>
-  <h4 id='showheadings' class='pull-right'>Current Price: $<%= @current_price %></h4>
+  <h4 id='showheadings' class='pull-right'>Current Price: $<%= @auction.bids.maximum('price')%></h4>
   <p><%= @auction.details %></p>
   <p id='showheadings' class='pull-right'>
     <% if @auction.bids.empty? %>
