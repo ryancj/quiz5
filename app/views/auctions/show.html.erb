@@ -3,7 +3,9 @@
   <h4 id='showheadings' class='pull-right'>Current Price: $<%= @current_price %></h4>
   <p><%= @auction.details %></p>
   <p id='showheadings' class='pull-right'>
-    <% if @current_price > @auction.reserve_price %>
+    <% if @auction.bids.empty? %>
+      Place a bid.
+    <% elsif @current_price > @auction.reserve_price%>
       *Reserve price met.
     <% else %>
       *Reserve price not met.

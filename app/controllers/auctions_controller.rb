@@ -16,7 +16,7 @@ class AuctionsController < ApplicationController
   def show
     @auction = Auction.find params[:id]
     @bid = Bid.new
-    @current_price = Bid.maximum('price')
+    @current_price = @auction.bids.maximum('price') 
   end
 
   def index
