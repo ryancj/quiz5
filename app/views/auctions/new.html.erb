@@ -1,0 +1,13 @@
+<div class='container'>
+  <h2>Create New Action</h2>
+  <%= form_for @auction do |f| %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title  %>
+    </div>
+    <div>
+      <%= f.label :details %>
+      <%= f.text_area :details  %>
+    </div>
+  <% end %>
+</div>

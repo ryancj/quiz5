@@ -1,0 +1,13 @@
+$navbar-height: 52px;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar-brand {
+  padding-top: 0;
+  margin: 0;
+}
+
+.navbar-text {
+  margin-left: -10px;
+}
